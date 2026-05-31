@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: amigo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: amigo
+  template:
+    metadata:
+      labels:
+        app: amigo
+    spec:
+      containers:
+      - name: amigo
+        image: amigo
+        ports:
+        - containerPort: 8080
