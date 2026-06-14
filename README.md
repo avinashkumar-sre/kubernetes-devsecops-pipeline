@@ -1,68 +1,61 @@
 # Kubernetes DevSecOps Pipeline
 
-Production-style DevSecOps pipeline implementation using Kubernetes, Terraform, GitHub Actions, Docker, and monitoring tools.
+This project demonstrates an end-to-end DevSecOps workflow for containerized applications deployed to Kubernetes.
 
----
+## Overview
 
-## 🚀 Features
+The objective of this project is to automate application delivery while incorporating security checks throughout the software delivery lifecycle.
 
-* Infrastructure as Code using Terraform
-* Kubernetes deployment automation
-* CI/CD pipeline integration
-* GitOps workflow
-* Monitoring & observability
-* Security scanning
-* Production-ready architecture
+## Technology Stack
 
----
-
-## 🛠 Tools Used
-
-* Kubernetes
-* AWS EKS
-* Terraform
-* Docker
 * GitHub Actions
+* Docker
+* SonarQube
+* Trivy
+* Kubernetes
 * ArgoCD
-* Prometheus
-* Grafana
-* Jenkins
+* AWS
 
----
+## Pipeline Flow
 
-## 📂 Repository Structure
+Developer Commit
 
-```bash
-terraform/
-kubernetes/
-helm/
-github-actions/
-monitoring/
-scripts/
-```
+↓
 
----
+GitHub Actions
 
-## 📌 Goals
+↓
 
-* Automate infrastructure provisioning
-* Improve deployment reliability
-* Enable scalable cloud-native workloads
-* Implement secure CI/CD pipelines
-* Enhance monitoring and observability
+Build Docker Image
 
----
+↓
 
-## 📈 Future Improvements
+SonarQube Analysis
 
-* Add Helm chart deployments
-* Integrate security scanning
-* Implement GitOps automation
-* Add Kubernetes autoscaling setup
+↓
 
----
+Trivy Security Scan
 
-## 👨‍💻 Author
+↓
 
-Avinash Kumar
-Senior DevOps & Site Reliability Engineer
+Push Image
+
+↓
+
+ArgoCD Deployment
+
+↓
+
+Kubernetes Cluster
+
+## Security Controls
+
+* Static Code Analysis
+* Container Vulnerability Scanning
+* Automated Deployment Validation
+
+## Future Improvements
+
+* OPA Policy Enforcement
+* Runtime Security Monitoring
+* Multi-Environment Deployments
